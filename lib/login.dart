@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:qlu/query_room.dart';
-import 'package:qlu/storage.dart';
-
-import 'package:qlu/jwxt.dart';
+import 'jwxt.dart';
+import 'query_room.dart';
+import 'storage.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

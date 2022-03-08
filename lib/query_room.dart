@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:intl/intl.dart';
-import 'package:qlu/room_list.dart';
-import 'package:qlu/jwxt.dart';
+import 'jwxt.dart';
+import 'room_list.dart';
 
 class QueryRoom extends StatefulWidget {
   final Jwxt Q;
+
   const QueryRoom({Key? key, required this.Q}) : super(key: key);
 
   @override
@@ -16,15 +16,7 @@ class _QueryRoomState extends State<QueryRoom> {
   final dateController = TextEditingController();
   final idletimeController = TextEditingController();
   final xqidController = TextEditingController();
-  List xqids = [];
-  List room = [];
-  List time = [
-    {"code": "allday", "text": "全天"},
-    {"code": "am", "text": "上午"},
-    {"code": "pm", "text": "下午"},
-    {"code": "night", "text": "晚上"},
-    {"code": "xxxx", "text": "其他"}
-  ];
+
 
   @override
   void initState() {

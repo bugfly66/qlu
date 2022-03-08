@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Data extends StatefulWidget {
   final List data;
+
   const Data({Key? key, required this.data}) : super(key: key);
 
   @override
@@ -10,6 +11,7 @@ class Data extends StatefulWidget {
 
 class _DataState extends State<Data> {
   List rooms = [];
+
   @override
   void initState() {
     // print("--------------");

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qlu/login.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());

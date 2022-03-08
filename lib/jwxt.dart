@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:intl/intl.dart';
 
@@ -11,6 +12,7 @@ class Jwxt {
   String account = "";
   String password = "";
   String url = "http://jwxt.qlu.edu.cn/app.do";
+
   ////////////////////////////////////////////////////////
 
   /**
@@ -21,6 +23,7 @@ class Jwxt {
   ////////////////////////////////////////////////////////
   String curWeek = "10";
   String curTerm = "2021-2022-2";
+
   ////////////////////////////////////////////////////////
 
   Map<String, String>? params = <String, String>{};
@@ -31,6 +34,7 @@ class Jwxt {
     params!.addAll({"xh": account});
     params!.addAll({"pwd": password});
   }
+
   Future<Jwxt> connect() async {
     await Dio()
         .get(
