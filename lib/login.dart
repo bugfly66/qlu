@@ -99,7 +99,19 @@ class _LoginPageState extends State<LoginPage> {
               ),
               onPressed: () async {
                 Jwxt Q = Jwxt(idController.text, pwdController.text);
-                await Q.connect();
+                try {
+                  await Q.connect();
+                } catch (e) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: const Text("错误"),
+                      content: Text("$e"),
+                    ),
+                  );
+                  return;
+                }
+
                 Storage.setData("userid", idController.text);
                 Storage.setData("userpwd", pwdController.text);
                 // Navigator.pushNamedAndRemoveUntil(context, "/queryRoom", (route) => false,arguments: Q);
@@ -133,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
-                      child: const Text("占位按钮"),
+                      child: const Text("好好学习"),
                       onPressed: () {}),
                 ),
                 Expanded(
@@ -142,7 +154,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.zero,
                       ),
-                      child: const Text("占位按钮"),
+                      child: const Text("天天向上"),
                       onPressed: () {}),
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:qlu/storage.dart';
 import 'jwxt.dart';
 import 'room_list.dart';
 
@@ -16,7 +17,6 @@ class _QueryRoomState extends State<QueryRoom> {
   final dateController = TextEditingController();
   final idletimeController = TextEditingController();
   final xqidController = TextEditingController();
-
 
   @override
   void initState() {
@@ -140,11 +140,7 @@ class _QueryRoomState extends State<QueryRoom> {
                   } else if (idleTime == "n") {
                     idleTime = "night";
                   }
-                  // List dateTime = date.split("-");
-                  //
-                  // DateFormat df = DateFormat("yyyy-MM-dd");
-                  // DateTime.now();
-                  // date = df.format(DateTime(dateTime[0],dateTime[1],dateTime[2]));
+                  Storage.setData("xqid", xqid);
                   widget.Q
                       .getClassroom(idleTime, date, xqid)
                       .exec()

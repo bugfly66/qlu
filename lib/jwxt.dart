@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:intl/intl.dart';
@@ -48,8 +47,10 @@ class Jwxt {
       // print(reqResultMap.toString());
       if (reqResultMap["flag"] == "0") {
         // print("登录失败");
-        exit(0);
+        // exit(0);
+        throw "登录失败,请检查密码学号！";
       } else {
+
         // print("setheader"+reqResultMap["token"]!);
         headers!.addAll({"token": reqResultMap["token"]!});
       }
