@@ -67,8 +67,8 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               controller: idController,
               decoration: const InputDecoration(
-                hintText: '英文字母',
-                labelText: 'ID',
+                hintText: '教务系统学号',
+                labelText: '学号',
               ),
             ),
           ),

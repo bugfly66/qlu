@@ -14,12 +14,9 @@ class _DataState extends State<Data> {
 
   @override
   void initState() {
-    // print("--------------");
-    // print("++++:" + widget.data.toString());
     for (var element in widget.data) {
-      // print("+++");
       rooms.add({"jxl": element["jxl"]});
-      // print(element["jxl"]);
+
       element["jsList"].forEach((ele) {
         if (!ele["jsmc"].contains(RegExp(r"室|实验|技术|化学")) &&
             !ele["jzwmc"].contains(RegExp(r"工程|操场|实验"))) {
@@ -32,7 +29,7 @@ class _DataState extends State<Data> {
         }
       });
     }
-    // print("rooms:" + rooms.toString());
+
     super.initState();
   }
 
